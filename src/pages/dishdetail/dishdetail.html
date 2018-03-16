@@ -1,0 +1,64 @@
+<!--
+  Generated template for the DishdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>Dish Details</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  <ion-card *ngIf="dish">
+    <img src="{{BaseURL + dish.image}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{dish.name | uppercase}}
+      </ion-card-title>
+      <p>
+        {{dish.description}}
+      </p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="star"></ion-icon>
+          <div>{{ avgstars }} stars</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{ numcomments }} Comments</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <div [hidden]="dish || errMess">
+    <ion-spinner></ion-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+  
+  <ion-list *ngIf="dish">
+    <ion-list-header>
+      Comments
+    </ion-list-header>
+    <ion-item *ngFor="let comment of dish.comments" text-wrap>
+      <h4> {{comment.comment}} </h4>
+      <p> {{comment.rating}} Stars</p>
+      <p>
+        <span> -- {{comment.author}} {{comment.date | date }} </span>
+      </p>
+    </ion-item>
+  </ion-list>
+  
+  </ion-content>
