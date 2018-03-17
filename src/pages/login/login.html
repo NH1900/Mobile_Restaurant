@@ -1,0 +1,38 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar color="primary-pale">
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <span ion-text color="primary" showWhen="ios">Cancel</span>
+          <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+        </button>
+      </ion-buttons>    
+      <ion-title>Login</ion-title>
+    </ion-toolbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Remember Me</ion-label>
+        <ion-checkbox color="primary" formControlName="remember" checked="true"></ion-checkbox>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+  </ion-content>

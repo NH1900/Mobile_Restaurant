@@ -1,3 +1,4 @@
+<ion-split-pane>
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar color="primary-dark">
@@ -5,15 +6,25 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content class="background-pale">
     <ion-list>
+      <ion-list-header color="primary-light" text-wrap>
+        <ion-thumbnail item-left>
+          <img src="assets/images/logo.png" />
+        </ion-thumbnail>
+        <h3>NH1900 Restaurant</h3>
+      </ion-list-header>
       <button color="primary-pale" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon [name]="p.icon" item-left></ion-icon>
         {{p.title}}
       </button>
       <button color="primary-pale" menuClose ion-item (click)="openReserve()">
-          <ion-icon name="restaurant" item-left></ion-icon>
-          Reserve Table
+        <ion-icon name="restaurant" item-left></ion-icon>
+        Reserve Table
+      </button>
+      <button color="primary-pale" menuClose ion-item (click)="openLogin()">
+        <ion-icon name="log-in" item-left></ion-icon>
+        Login
       </button>
     </ion-list>
   </ion-content>
@@ -21,4 +32,5 @@
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
+</ion-split-pane>
