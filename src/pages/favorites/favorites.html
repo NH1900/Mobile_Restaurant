@@ -1,0 +1,50 @@
+<!--
+  Generated template for the FavoritesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!--side menu display-->
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Favorites</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div *ngIf="favorites">
+    <!--通过ionlist循环显示喜欢的菜单每个显示都用ion sliding标识支持滑动功能-->
+    <ion-list>
+      <ion-item-sliding *ngFor="let favorite of favorites" #item>
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="{{BaseURL + favorite.image}}" />
+        </ion-thumbnail>
+        <h3>{{ favorite.name }}</h3>
+        <p>{{ favorite.description }}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <!--对应#item-->
+        <button ion-button color="danger" (click)="deleteFavorite(item, favorite.id)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+  <div [hidden]="favorites || errMess">
+    <ion-spinner></ion-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{ errMess }}</h4>
+  </div>
+</ion-content>
