@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ItemSliding, ToastController, Load
 import { FavoriteProvider } from '../../providers/favorite/favorite';
 import { Dish } from '../../shared/dish';
 
+
 /**
  * Generated class for the FavoritesPage page.
  *
@@ -25,7 +26,9 @@ export class FavoritesPage implements OnInit {
     @Inject('BaseURL') private BaseURL,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
-    private alertCtrl: AlertController) {
+    private alertCtrl: AlertController
+    ) {
+      
   }
 
   ngOnInit() {

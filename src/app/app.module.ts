@@ -17,6 +17,7 @@ import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-htt
 import { DishdetailPage } from '../pages/dishdetail/dishdetail';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { ReservationPage } from '../pages/reservation/reservation';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { LoginPage } from '../pages/login/login';
 
 import { HttpModule } from '@angular/http';
@@ -58,6 +59,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DishProvider,
     LeaderProvider,
+    LocalNotifications,
     PromotionProvider,
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
