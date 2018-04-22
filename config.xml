@@ -84,4 +84,5 @@
     <plugin name="de.appplant.cordova.plugin.local-notification" spec="^0.8.5" />
     <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-email" spec="^1.2.7" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.3.2" />
 </widget>

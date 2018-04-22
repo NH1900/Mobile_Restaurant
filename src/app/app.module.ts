@@ -20,6 +20,7 @@ import { ReservationPage } from '../pages/reservation/reservation';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { LoginPage } from '../pages/login/login';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 import { HttpModule } from '@angular/http';
 import { baseURL } from '../shared/baseurl';
@@ -64,6 +65,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     PromotionProvider,
     ProcessHttpmsgProvider,
     EmailComposer,
+    SocialSharing,
     { provide: 'BaseURL', useValue: baseURL },
     FavoriteProvider
   ]
