@@ -19,6 +19,7 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { ReservationPage } from '../pages/reservation/reservation';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { LoginPage } from '../pages/login/login';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { HttpModule } from '@angular/http';
 import { baseURL } from '../shared/baseurl';
@@ -62,6 +63,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     LocalNotifications,
     PromotionProvider,
     ProcessHttpmsgProvider,
+    EmailComposer,
     { provide: 'BaseURL', useValue: baseURL },
     FavoriteProvider
   ]
