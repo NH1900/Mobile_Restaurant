@@ -52,7 +52,7 @@ export class DishdetailPage {
   }
 
   //这里的actionsheet应该是之前的某次作业。
-  presentActionSheet() {
+  /*presentActionSheet() {
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Select Actions',
       buttons: [
@@ -74,6 +74,6 @@ export class DishdetailPage {
         },
       ]
     });
-  }
+  }*/
 
 }
