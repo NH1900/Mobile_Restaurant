@@ -212,7 +212,6 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
         remember: true
       });
   }
-
 ```
 # Future
 For this project, I migrate Online restaurant project to Hybrid Mobile platform.So I use Ionic and Cordova framework to invoke some local features of mobile device such as:Splash Screen plugin, Notifying plugin or Social Sharing plugin...
